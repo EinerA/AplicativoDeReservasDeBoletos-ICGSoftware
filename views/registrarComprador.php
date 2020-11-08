@@ -1,4 +1,13 @@
 <?php     include '../index.php'; ?>
+<?php
+  ob_start();
+  session_start();
+  if(!isset($_SESSION["correo"]))
+  {
+    header("Location: login.php");
+  }
+    
+?>
 <header>
     <div class="navbar-fixed">
         <nav class="blue darken-4">
@@ -8,7 +17,7 @@
         </nav>
     </div>
 </header>
-
+<?php     include './main.php'; ?>
       <div class="content-wrapper">        
         <section class="content">
             <div class="row">
@@ -62,5 +71,5 @@
     </div>
 
 
-<script src="../includes/js/consultas.js"></script>
+    <script src="../controllers/consultas.js"></script>
 
